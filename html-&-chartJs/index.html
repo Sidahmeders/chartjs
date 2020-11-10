@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Chart-js</title>
+</head>
+<body>
+
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const myChart = document.getElementById('myChart').getContext('2d')
+
+        // global options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 16;
+
+        const peopleChart = new Chart(myChart, {
+            type: 'polarArea', // bar, line, radar, pie, doughnut, polarArea, bubble, scatter
+            data: {
+                labels: ['chlef', 'adrar', 'oran', 'khanshla', 'm3asker', 'sidi-belAbas', 'tlemsan'],
+                datasets: [{
+                    label: 'TEHLAB',
+                    data: [
+                        234566,
+                        346566,
+                        458594,
+                        437644,
+                        323748,
+                        342356,
+                        235465
+                    ],
+                    backgroundColor: [
+                        "#445",
+                        '#834',
+                        '#463',
+                        '#744',
+                        '#928',
+                        '#833',
+                        '#dd3'
+                    ],
+                    borderWidth: 1.5,
+                    borderColor: '#fff',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: "#000"
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Algeria biggest Mistake',
+                    fontSize: 24
+                },
+                legend: {
+                    // display: false,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#900'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        top: 20
+                    }
+                },
+                // tooltips: {
+                //     enabled: false
+                // }
+            }
+        })
+    </script>
+</body>
+</html>
